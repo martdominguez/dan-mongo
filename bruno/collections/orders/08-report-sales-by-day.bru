@@ -1,0 +1,10 @@
+meta {
+  name: Report Sales By Day
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/api/orders/reports/sales-by-day?from=2026-04-01T00:00:00Z&to=2026-04-30T23:59:59Z
+  auth: none
+}

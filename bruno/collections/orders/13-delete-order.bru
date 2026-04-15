@@ -1,0 +1,10 @@
+meta {
+  name: Delete Order
+  type: http
+  seq: 13
+}
+
+delete {
+  url: {{baseUrl}}/api/orders/{{orderId}}
+  auth: none
+}

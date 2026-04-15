@@ -1,0 +1,10 @@
+meta {
+  name: Get Order By Number
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/orders/order-number/{{orderNumber}}
+  auth: none
+}

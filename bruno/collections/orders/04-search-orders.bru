@@ -1,0 +1,10 @@
+meta {
+  name: Search Orders
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/orders/search?status=CREATED&city=Cordoba&paid=false&minimumAmount=50
+  auth: none
+}

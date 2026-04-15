@@ -1,0 +1,10 @@
+meta {
+  name: Report Top Products
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/api/orders/reports/top-products?limit=5
+  auth: none
+}

@@ -1,0 +1,57 @@
+meta {
+  name: Create Order
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/orders
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "orderNumber": "{{orderNumber}}",
+    "customerId": "CUST-1001",
+    "customerName": "Ana Perez",
+    "status": "CREATED",
+    "items": [
+      {
+        "productId": "PROD-10",
+        "productName": "Wireless Mouse",
+        "category": "ACCESSORIES",
+        "quantity": 2,
+        "unitPrice": 25.00
+      },
+      {
+        "productId": "PROD-21",
+        "productName": "Mechanical Keyboard",
+        "category": "PERIPHERALS",
+        "quantity": 1,
+        "unitPrice": 135.50
+      }
+    ],
+    "delivery": {
+      "recipientName": "Ana Perez",
+      "phone": "+54-351-555-1200",
+      "addressLine": "San Martin 1234",
+      "city": "Cordoba",
+      "postalCode": "5000",
+      "country": "Argentina",
+      "deliveryInstructions": "Leave at reception"
+    },
+    "payment": {
+      "paid": false,
+      "paymentMethod": "CARD",
+      "transactionReference": null,
+      "paidAt": null
+    },
+    "tags": ["web", "priority"],
+    "notes": "Created from Bruno collection"
+  }
+}

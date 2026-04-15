@@ -1,0 +1,57 @@
+meta {
+  name: Update Order
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/api/orders/{{orderId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "orderNumber": "{{orderNumber}}",
+    "customerId": "CUST-1001",
+    "customerName": "Ana Perez",
+    "status": "PREPARING",
+    "items": [
+      {
+        "productId": "PROD-10",
+        "productName": "Wireless Mouse",
+        "category": "ACCESSORIES",
+        "quantity": 3,
+        "unitPrice": 25.00
+      },
+      {
+        "productId": "PROD-21",
+        "productName": "Mechanical Keyboard",
+        "category": "PERIPHERALS",
+        "quantity": 1,
+        "unitPrice": 135.50
+      }
+    ],
+    "delivery": {
+      "recipientName": "Ana Perez",
+      "phone": "+54-351-555-1200",
+      "addressLine": "San Martin 1234",
+      "city": "Cordoba",
+      "postalCode": "5000",
+      "country": "Argentina",
+      "deliveryInstructions": "Ring the bell twice"
+    },
+    "payment": {
+      "paid": true,
+      "paymentMethod": "CARD",
+      "transactionReference": "TXN-889122",
+      "paidAt": "2026-04-15T14:00:00Z"
+    },
+    "tags": ["web", "priority", "paid"],
+    "notes": "Updated from Bruno collection"
+  }
+}
